@@ -14,12 +14,21 @@ win.rectangle(5, 5, 10, 10, outLine=(1, 0, 0), inFill = (0, 0, 1))
 
 print(win.getPixel(7, 7))
 
-win.circle(50, 50, 14, outLine="red", outLineWidth = 1, inFill = "yellow")
-win.update()
-points = [[100, 100], [150, 100], [150, 150], [125, 140], [120, 150]]
-win.polygon(points)
+start = time.time()
+win.circle(50, 50, 10, outLine="red", outLineWidth = 1, inFill = "yellow")
+end = time.time()
+print(end - start)
 
-win.bucketFill(120, 120, "brown")
+win.update()
+
+points = [[100, 100], [125, 90], [150, 100], [170, 170], [125, 140], [120, 150]]
+
+
+
+start = time.time()
+win.polygon(points, inFill = "brown")
+end = time.time()
+print(end - start)
 
 while(1):
 	win.update()
